@@ -18,21 +18,23 @@ const DUMMY_MOVIES = [
 ]
 function App() {
   const [movies, setMovies] = useState([])
+  const [loading, setLoading] = useState(false)
 
-  function fetchMoviesHandler() {
-    fetch("https://swapi.dev/api/films/")
-      .then(response => response.json())
-      .then(data => {
-        const mappedResults = data.results.map(movieData => {
-          return {
-            id: movieData.episode_id,
-            title: movieData.title,
-            openingText: movieData.opening_crawl,
-            releaseDate: movieData.release_date
-          }
-        })
-        setMovies(mappedResults)
-      })
+  async function fetchMoviesHandler() {
+    setLoading(true)
+    const response = await fetch("https://swapi.dev/api/films/")
+    const data = await response.json()
+
+    const mappedResults = data.results.map(movieData => {
+      return {
+        id: movieData.episode_id,
+        title: movieData.title,
+        openingText: movieData.opening_crawl,
+        releaseDate: movieData.release_date,
+      }
+    })
+    setMovies(mappedResults)
+    setLoading(false)
   }
 
   return (
