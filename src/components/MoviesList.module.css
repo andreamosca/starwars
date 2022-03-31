@@ -1,0 +1,7 @@
+.movies-list{
+    background-color: #eee;
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 2rem;
+}

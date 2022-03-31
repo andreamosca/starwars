@@ -1,0 +1,21 @@
+.movie {
+  background-color: #230052;
+  list-style-type: none;
+  text-align: center;
+  border-radius: 12px;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.movie h3{
+    color: #eee;
+}
+
+.movie p {
+  color: white;
+}
+
+.movie h2 {
+  color: yellow;
+}
